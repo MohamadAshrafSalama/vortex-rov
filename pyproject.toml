@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "vortex-rov"
+version = "2024.1.0"
+description = "Computer vision pipeline for MATE ROV 2024 - Vortex Robotics Team"
+requires-python = ">=3.9"
+dependencies = [
+    "opencv-python>=4.5",
+    "numpy>=1.21",
+    "ultralytics>=8.0",
+    "scipy>=1.7",
+    "matplotlib>=3.5",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+rov-competition = "scripts.run_competition:main"
+rov-calibrate = "scripts.run_calibration:main"
+rov-coral = "scripts.run_coral_analysis:main"
+rov-mosaic = "scripts.run_mosaic:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
