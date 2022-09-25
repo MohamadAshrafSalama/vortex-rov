@@ -1,0 +1,71 @@
+colors:
+  red:
+    # Red wraps around 0/180 in HSV, so we need two ranges
+    lower1: [0, 100, 60]
+    upper1: [10, 255, 255]
+    lower2: [165, 100, 60]
+    upper2: [180, 255, 255]
+
+  blue:
+    lower: [100, 80, 50]
+    upper: [130, 255, 255]
+
+  green:
+    lower: [40, 60, 50]
+    upper: [85, 255, 255]
+
+  yellow:
+    lower: [20, 100, 100]
+    upper: [35, 255, 255]
+
+  orange:
+    lower: [10, 120, 100]
+    upper: [20, 255, 255]
+
+  white:
+    lower: [0, 0, 200]
+    upper: [180, 40, 255]
+
+  brown:
+    lower: [8, 60, 30]
+    upper: [20, 200, 130]
+
+morphology:
+  kernel_size: 7
+  open_iterations: 1
+  close_iterations: 2
+
+contours:
+  min_area: 400
+  max_area: 80000
+  min_circularity: 0.3
+  aspect_ratio_min: 0.3
+  aspect_ratio_max: 3.5
+
+boxes:
+  min_area: 1500
+  max_area: 60000
+  approx_epsilon: 0.04   # fraction of perimeter for polyDP
+  aspect_ratio_min: 0.5
+  aspect_ratio_max: 2.0
+
+markers:
+  min_area: 200
+  max_area: 8000
+  aspect_ratio_min: 0.3
+  aspect_ratio_max: 3.0
+
+transect_line:
+  hsv_lower: [25, 80, 80]
+  hsv_upper: [45, 255, 255]
+  min_area: 800
+  hough_threshold: 40
+  hough_min_length: 60
+  hough_max_gap: 20
+
+yolo:
+  model_path: models/rov_yolov8.pt
+  confidence: 0.45
+  iou_threshold: 0.45
+  input_size: 640
+  classes: null         # null = all classes; list of ints to filter
