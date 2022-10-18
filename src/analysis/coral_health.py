@@ -305,3 +305,4 @@ class CoralHealthAnalyzer:
                 cv2.FONT_HERSHEY_SIMPLEX, 0.42, (0, 0, 0), 1
             )
         return legend
+
