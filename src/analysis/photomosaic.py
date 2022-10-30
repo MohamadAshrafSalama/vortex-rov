@@ -236,3 +236,4 @@ class PhotomosaicStitcher:
             flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS,
         )
         return vis
+
