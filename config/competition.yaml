@@ -1,0 +1,51 @@
+general:
+  image_size: [1280, 720]
+  output_dir: results/
+  display: true
+
+transect:
+  pid:
+    kp: 0.6
+    ki: 0.05
+    kd: 0.15
+    windup_limit: 1.0
+  deadband: 0.05         # normalized offset below which no correction is applied
+  max_steering: 1.0
+
+poi_mapping:
+  merge_radius_px: 55    # pixel radius to merge nearby sightings
+  min_sightings: 3       # confirmations required before a POI is logged
+  # Approximate camera-to-floor altitude (meters) for coordinate projection
+  camera_altitude_m: 0.8
+  focal_length_mm: 3.6   # lens focal length
+  sensor_width_mm: 3.68  # physical sensor width
+
+coral:
+  grid_size: 4           # NxN grid cells
+  cell_min_pixels: 120   # minimum active pixels for valid classification
+  hist_weight: 0.4       # weight for histogram correlation in severity score
+  ssim_weight: 0.3
+  hsv_weight: 0.3
+
+photomosaic:
+  orb_features: 2000
+  match_ratio: 0.72      # Lowe ratio test threshold
+  min_matches: 12
+  ransac_threshold: 5.0
+  blend_feather: 40      # feathering width in pixels for seam blending
+  max_canvas_px: 6000    # abort if canvas exceeds this dimension
+
+tracking:
+  centroid:
+    max_disappeared: 20
+    max_distance: 90
+  kalman:
+    process_noise: 0.03
+    measurement_noise: 1.0
+    max_disappeared: 25
+
+guidance:
+  centering_threshold_px: 35
+  reference_box_width_px: 110   # apparent width at 1m
+  reference_distance_m: 1.0
+  arrow_scale: 60               # pixel length of directional arrow
