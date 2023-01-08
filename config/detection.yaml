@@ -69,3 +69,4 @@ yolo:
   iou_threshold: 0.45
   input_size: 640
   classes: null         # null = all classes; list of ints to filter
+
