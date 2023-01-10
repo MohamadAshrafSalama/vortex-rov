@@ -231,3 +231,4 @@ class TransectFollower:
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 220), 2
             )
         return out
+
