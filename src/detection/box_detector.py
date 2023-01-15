@@ -170,3 +170,4 @@ class BoxDetector:
         if not candidates:
             return None
         return candidates[0]
+
