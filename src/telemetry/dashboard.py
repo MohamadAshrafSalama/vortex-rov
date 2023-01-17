@@ -257,3 +257,4 @@ class Dashboard:
         self._running = False
         if self._root:
             self._root.destroy()
+
