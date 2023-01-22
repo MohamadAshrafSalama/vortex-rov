@@ -195,3 +195,4 @@ def list_available_cameras(max_check=8):
             available.append(i)
         cap.release()
     return available
+
