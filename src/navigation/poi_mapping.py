@@ -221,3 +221,4 @@ class POIMapper:
         self._pois.clear()
         self._next_id = 1
         self._frame_idx = 0
+
