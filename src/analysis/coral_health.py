@@ -306,3 +306,4 @@ class CoralHealthAnalyzer:
             )
         return legend
 
+
