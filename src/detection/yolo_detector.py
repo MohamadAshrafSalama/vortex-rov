@@ -141,3 +141,4 @@ class YoloDetector:
         """Return the n highest-confidence detections."""
         sorted_dets = sorted(detections, key=lambda d: d["confidence"], reverse=True)
         return sorted_dets[:n]
+
