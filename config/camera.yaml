@@ -27,3 +27,4 @@ white_balance:
   histogram_stretch:
     percentile_low: 1
     percentile_high: 99
+
